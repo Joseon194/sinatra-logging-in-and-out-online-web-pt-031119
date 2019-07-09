@@ -1,6 +1,6 @@
 require_relative '../../config/environment'
 class ApplicationController < Sinatra::Base
-  configure do
+   register Sinatra::ActiveRecordExtensionconfigure do
     set :views, Proc.new { File.join(root, "../views/") }
     enable :sessions unless test?
     set :session_secret, "secret"
